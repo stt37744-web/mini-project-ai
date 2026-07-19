@@ -9,6 +9,7 @@ class PuzzleState:
         self.board = board
         self.moves = moves
         self.prev = prev
+        
         self.blank_pos = self.find_blank()
 
     def find_blank(self) -> Tuple[int, int]:
