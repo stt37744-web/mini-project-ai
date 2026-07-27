@@ -17,7 +17,7 @@ class PuzzleState:
             for j in range(3):
                 if self.board[i][j] == 0:
                     return (i, j)
-        return (-1, -1)
+        return (-1, - 1)
 
     def __eq__(self, other):
         return self.board == other.board
