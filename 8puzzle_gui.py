@@ -3,7 +3,7 @@ from tkinter import messagebox
 import collections
 import random
 import time
-from typing import List, Tuple, Optional
+fromtyping import List, Tuple, Optional
 class PuzzleState:
     def __init__(self, board: List[List[int]], moves: int = 0, prev: Optional['PuzzleState'] = None):
         self.board = board
