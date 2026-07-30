@@ -8,7 +8,7 @@ class PuzzleState:
     def __init__(self, board: List[List[int]], moves: int = 0, prev: Optional['PuzzleState'] = None):
         self.board = board
         self.moves = moves
-        self.prev = prev
+        self.prev =     prev
         
         self.blank_pos = self.find_blank()
 
