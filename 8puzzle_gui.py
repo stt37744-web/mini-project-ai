@@ -5,10 +5,10 @@ import random
 import time
 fromtyping import List, Tuple, Optional
 class PuzzleState:
-    def __init__(self, board: List [List[int]], moves: int = 0, prev: Optional['PuzzleState'] = None):
-        self.board = board
+    def __init__(self, board: List        [List[int]], moves: int = 0, prev: Optional['PuzzleState'] = None):
+        self.board = board  
         self.moves = moves
-        self.prev =     prev  
+        self.prev =  prev  
         self.blank_pos = self.find_blank()
     def find_blank(self) -> Tuple[int, int]:
         for i in range(3):
