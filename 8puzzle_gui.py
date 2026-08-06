@@ -15,13 +15,13 @@ class PuzzleState:
             for j in range(3):
                 if self.board[i][j] == 0:
                     return (i, j)
-        return (-1, - 1)
+        return (-1,- 1)
 
     def __eq__(self, other):
         return self.board == other.board
 
     def __hash__(self):
-        return hash(tuple(tuple(row) for row in self.board))
+        return hash(tuple(tuple(row)    for row in     self.board))
 
     def __repr__(self):
         return f"State(moves={self.moves})\n{self.board}"
