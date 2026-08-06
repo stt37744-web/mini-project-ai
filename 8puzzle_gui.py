@@ -5,7 +5,7 @@ import random
 import time
 fromtyping import List, Tuple, Optional
 class PuzzleState:
-    def __init__(self, board: List        [List[int]], moves: int = 0, prev: Optional['PuzzleState'] = None):
+    def __init__(self, board: List[List[int]], moves: int = 0, prev: Optional['PuzzleState'] = None):
         self.board = board  
         self.moves = moves
         self.prev =  prev  
