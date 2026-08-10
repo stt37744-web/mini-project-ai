@@ -5,6 +5,7 @@ import random
 import time
 fromtyping import List, Tuple, Optional
 class PuzzleState: 
+    
     def __init__(self, board: List[List[int]],moves:int = 0, prev:Optional['PuzzleState'] = None):
         self.board = board  
         self.moves = moves
@@ -12,6 +13,7 @@ class PuzzleState:
         self.blank_pos = self.find_blank()
     def find_blank(self) -> Tuple[int, int]:
         for i in range(3):
+            
             for j in range(3):
                 if self.board[i][j] == 0:
                     return (i, j)
@@ -45,6 +47,7 @@ def solve_8puzzle(initial_board: List[List[int]], method: str = 'bfs') -> Option
     
     if initial_state.board == goal_board:
         return initial_state
+        
     
     if method.lower() == 'bfs':
         queue = collections.deque([initial_state])
