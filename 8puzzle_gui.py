@@ -4,8 +4,7 @@ import collections
 import random                                                                                     
 import time
 fromtyping import List, Tuple, Optional
-class PuzzleState: 
-    
+class PuzzleState:  
     def __init__(self, board: List[List[int]],moves:int = 0, prev:Optional['PuzzleState'] = None):
         self.board = board  
         self.moves = moves
@@ -13,18 +12,15 @@ class PuzzleState:
         self.blank_pos = self.find_blank()
     def find_blank(self) -> Tuple[int, int]:
         for i in range(3):
-            
             for j in range(3):
                 if self.board[i][j] == 0:
                     return (i, j)
-        return (-1,- 1)
-
+        return (-1,- 1
     def __eq__(self, other):
         return self.board == other.board
 
     def __hash__(self):
         return hash(tuple(tuple(row)    for row in     self.board))
-
     def __repr__(self):
         return f"State(moves={self.moves})\n{self.board}"
 
