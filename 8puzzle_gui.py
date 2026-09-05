@@ -4,7 +4,8 @@ import collections
 import random                                                                                     
 import time
 fromtyping import List, Tuple, Optional
-class PuzzleState:  
+class PuzzleState: 
+    
     def __init__(self, board: List[List[int]],moves:int = 0, prev:Optional['PuzzleState'] = None):
         self.board = board  
         self.moves = moves
@@ -15,6 +16,7 @@ class PuzzleState:
             for j in range(3):
                 if self.board[i][j] == 0:
                     return (i, j)
+                    
         return (-1,- 1
     def __eq__(self, other):
         return self.board == other.board
@@ -29,6 +31,7 @@ class PuzzleState:
         directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]  
         i, j = self.blank_pos
         for di, dj in directions:
+            
             ni, nj = i + di, j + dj
             if 0 <= ni < 3 and 0 <= nj < 3:
                 new_board = [row[:] for row in self.board]
@@ -44,7 +47,6 @@ def solve_8puzzle(initial_board: List[List[int]], method: str = 'bfs') -> Option
     if initial_state.board == goal_board:
         return initial_state
         
-    
     if method.lower() == 'bfs':
         queue = collections.deque([initial_state])
         visited = set([initial_state])
@@ -52,6 +54,7 @@ def solve_8puzzle(initial_board: List[List[int]], method: str = 'bfs') -> Option
         stack = [initial_state]
         visited = set([initial_state])
     else:
+        
         raise ValueError("Method must be 'bfs' or 'dfs'")
     
     while True:
@@ -68,11 +71,13 @@ def solve_8puzzle(initial_board: List[List[int]], method: str = 'bfs') -> Option
         
         neighbors = current.get_neighbors()
         if method.lower() == 'dfs':
-            random.shuffle(neighbors)  
+            random.shuffle(neighbors)
+            
         for neighbor in neighbors:
             if neighbor not in visited:
                 visited.add(neighbor)
                 if method.lower() == 'bfs':
+                    
                     queue.append(neighbor)
                 else:
                     stack.append(neighbor)
